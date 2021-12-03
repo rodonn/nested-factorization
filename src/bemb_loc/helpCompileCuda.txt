@@ -1,0 +1,10 @@
+MY iMAC
+nvcc -I/usr/local/include -lgsl -std=c++11  -L/usr/local/cuda/lib -lcudart  -o emb emb.cu 2>&1 >/dev/null | grep -v -e '^/var/folders/*' -e '^[[:space:]]*\.section' -e '^[[:space:]]*\^[[:space:]]*~*'
+
+AZURE
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+nvcc -std=c++11 -o emb emb.cu `gsl-config --cflags --libs`
+
+GONZO
+nvcc -I/proj/sml/usr/franrruiz/my_gsl/usr/local/include -L/proj/sml/usr/franrruiz/my_gsl/usr/local/lib -lgsl -lgslcblas -std=c++11 -lcudart -o /proj/sml/usr/franrruiz/safeway-embeddings/src/bemb_loc/emb /proj/sml/usr/franrruiz/safeway-embeddings/src/bemb_loc/emb.cu

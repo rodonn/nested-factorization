@@ -1,0 +1,5 @@
+MACHINES
+g++ -std=c++11 -Wall -o emb emb.cpp `gsl-config --cflags --libs`
+
+MY iMAC
+g++ -Wall -std=c++11 -I/usr/local/include -lgsl -o emb emb.cpp 2>&1 >/dev/null | grep -v -e '^/var/folders/*' -e '^[[:space:]]*\.section' -e '^[[:space:]]*\^[[:space:]]*~*'

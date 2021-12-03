@@ -1,0 +1,20 @@
+*** AZURE ***
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+export CUDA_VISIBLE_DEVICES=0
+
+/home/franrruiz87/safeway-embeddings/src/bemb_loc/emb -dir /home/franrruiz87/safegraph/2017_11_06/dat -outdir /home/franrruiz87/safegraph/2017_11_06/out -K 20 -max-iterations 20000 -rfreq 100 -eta 0.01 -step_schedule 0 -saveCycle 30000 -batchsize 2000 -shpgamma 0.3 -shpbeta 0.3 -rtegamma 1.0 -rtebeta 1.0 -userVec 3 -price 10 -days 5 -itemIntercept -shuffle 0 -likelihood 4 -valTolerance 0 -valConsecutive 100000 -keepAbove 10 -label keepAbove10-newhyper; exit;
+
+
+*** GONZO ***
+
+export CUDA_VISIBLE_DEVICES=0
+
+/proj/sml/usr/franrruiz/safeway-embeddings/src/bemb_loc/emb -dir /proj/sml/usr/franrruiz/safegraph/dat -outdir /proj/sml/usr/franrruiz/safegraph/out -K 20 -max-iterations 20000 -rfreq 100 -eta 0.01 -step_schedule 0 -saveCycle 30000 -batchsize 2000 -shpgamma 0.3 -shpbeta 0.3 -rtegamma 1.0 -rtebeta 1.0 -userVec 3 -price 10 -days 5 -itemIntercept -shuffle 0 -likelihood 4 -valTolerance 0 -valConsecutive 100000 -keepAbove 10 -label keepAbove10-newhyper; exit;
+
+
+**** NEW ****
+export LD_LIBRARY_PATH=/usr/local/lib
+
+/home/franrruiz87/poisson-choice/src/bemb_loc/emb -dir /home/franrruiz87/safegraph/2017_11_18/dat -outdir /home/franrruiz87/safegraph/2017_11_18/out -skipheader -K 20 -IC 179 -obs2prior -max-iterations 20000 -rfreq 100 -eta 0.01 -step_schedule 0 -saveCycle 5000 -batchsize 2000 -userVec 3 -price 10 -days 5 -itemIntercept -shuffle 0 -likelihood 4 -valTolerance 0 -valConsecutive 100000 -keepAbove 3 -label keepAbove3;
